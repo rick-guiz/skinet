@@ -22,10 +22,16 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
+            ],
+            "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -42,6 +48,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -64,8 +71,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "client:build",
+            "sslCert": "ssl/server.crt",
             "sslKey": "ssl/server.key",
-            "sslCert": "ssl/server.cert",
             "ssl": true
           },
           "configurations": {
